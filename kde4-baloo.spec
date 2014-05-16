@@ -64,6 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/baloo_file
 %attr(755,root,root) %{_bindir}/baloo_file_cleaner
 %attr(755,root,root) %{_bindir}/baloo_file_extractor
+%attr(755,root,root) %{_bindir}/balooctl
 %attr(755,root,root) %{_bindir}/baloosearch
 %attr(755,root,root) %{_bindir}/balooshow
 %attr(755,root,root) %{_libdir}/libbaloocore.so.*.*.*
