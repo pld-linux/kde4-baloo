@@ -5,13 +5,13 @@
 
 Summary:	A framework for searching and managing metadata
 Name:		kde4-baloo
-Version:	4.13.1
+Version:	4.13.2
 Release:	1
 License:	LGPLv2 or LGPLv3
 Group:		X11/Applications
 URL:		http://www.kde.org/
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	e98b513d70a5dcb32bce503cea41e598
+# Source0-md5:	9aa396a4ac3952e7605cb23632d63aa2
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	akonadi-devel >= 1.12.0
 BuildRequires:	kde4-kdelibs-devel >= %{version}
