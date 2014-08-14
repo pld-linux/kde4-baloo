@@ -5,13 +5,13 @@
 
 Summary:	A framework for searching and managing metadata
 Name:		kde4-baloo
-Version:	4.13.2
+Version:	4.14.0
 Release:	1
 License:	LGPLv2 or LGPLv3
 Group:		X11/Applications
 URL:		http://www.kde.org/
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	9aa396a4ac3952e7605cb23632d63aa2
+# Source0-md5:	a8c2f2af46f82878c3ad0d609196e697
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	akonadi-devel >= 1.12.0
 BuildRequires:	kde4-kdelibs-devel >= %{version}
@@ -73,6 +73,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libbaloofiles.so.?
 %attr(755,root,root) %{_libdir}/libbaloopim.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libbaloopim.so.?
+%attr(755,root,root) %{_libdir}/libbalooqueryparser.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libbalooqueryparser.so.?
 %attr(755,root,root) %{_libdir}/libbalooxapian.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libbalooxapian.so.?
 %attr(755,root,root) %{_libdir}/kde4/akonadi/akonadi_baloo_searchplugin.so
@@ -105,5 +107,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libbaloocore.so
 %attr(755,root,root) %{_libdir}/libbaloofiles.so
 %attr(755,root,root) %{_libdir}/libbaloopim.so
+%attr(755,root,root) %{_libdir}/libbalooqueryparser.so
 %attr(755,root,root) %{_libdir}/libbalooxapian.so
 %{_libdir}/cmake/Baloo
