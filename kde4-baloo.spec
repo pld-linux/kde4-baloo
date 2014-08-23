@@ -10,7 +10,7 @@ Release:	1
 License:	LGPLv2 or LGPLv3
 Group:		X11/Applications
 URL:		http://www.kde.org/
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
 # Source0-md5:	a8c2f2af46f82878c3ad0d609196e697
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	akonadi-devel >= 1.12.0
