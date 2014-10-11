@@ -28,6 +28,7 @@ A framework for searching and managing metadata.
 Summary:	Developer files for %{name}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	kde4-kfilemetadata-devel >= %{version}
 
 %description devel
 Baloo development files and libraries.
