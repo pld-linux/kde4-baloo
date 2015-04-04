@@ -6,7 +6,7 @@
 Summary:	A framework for searching and managing metadata
 Name:		kde4-baloo
 Version:	4.14.3
-Release:	1
+Release:	2
 License:	LGPLv2 or LGPLv3
 Group:		X11/Applications
 URL:		http://www.kde.org/
