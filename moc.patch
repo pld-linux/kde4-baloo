@@ -1,0 +1,128 @@
+diff -ur baloo-4.14.3/src/pim/agent/agent.h baloo-4.14.3-moc/src/pim/agent/agent.h
+--- baloo-4.14.3/src/pim/agent/agent.h	2014-11-06 13:03:28.000000000 +0100
++++ baloo-4.14.3-moc/src/pim/agent/agent.h	2017-04-30 00:18:47.777785952 +0200
+@@ -23,8 +23,10 @@
+ #ifndef AGENT_H
+ #define AGENT_H
+ 
++#ifndef Q_MOC_RUN
+ #include <akonadi/agentbase.h>
+ #include <akonadi/collection.h>
++#endif
+ 
+ #include <QTimer>
+ #include <QDateTime>
+diff -ur baloo-4.14.3/src/pim/agent/autotests/indexertest.cpp baloo-4.14.3-moc/src/pim/agent/autotests/indexertest.cpp
+--- baloo-4.14.3/src/pim/agent/autotests/indexertest.cpp	2014-11-06 13:03:28.000000000 +0100
++++ baloo-4.14.3-moc/src/pim/agent/autotests/indexertest.cpp	2017-04-30 00:22:15.849794136 +0200
+@@ -20,6 +20,7 @@
+  *
+  */
+ 
++#ifndef Q_MOC_RUN
+ #include <QTest>
+ #include <Akonadi/Collection>
+ #include <KABC/Addressee>
+@@ -30,6 +31,7 @@
+ #include <../pim/search/email/emailsearchstore.h>
+ #include <../pim/search/contact/contactsearchstore.h>
+ #include <query.h>
++#endif
+ 
+ Q_DECLARE_METATYPE(QSet<qint64>)
+ Q_DECLARE_METATYPE(QList<qint64>)
+diff -ur baloo-4.14.3/src/pim/agent/tests/emailtest.cpp baloo-4.14.3-moc/src/pim/agent/tests/emailtest.cpp
+--- baloo-4.14.3/src/pim/agent/tests/emailtest.cpp	2014-11-06 13:03:28.000000000 +0100
++++ baloo-4.14.3-moc/src/pim/agent/tests/emailtest.cpp	2017-04-30 00:20:48.430882946 +0200
+@@ -20,6 +20,7 @@
+  *
+  */
+ 
++#ifndef Q_MOC_RUN
+ #include "emailindexer.h"
+ 
+ #include <QApplication>
+@@ -32,6 +33,7 @@
+ #include <Akonadi/ItemFetchJob>
+ #include <Akonadi/ItemFetchScope>
+ #include <Akonadi/Item>
++#endif
+ 
+ class App : public QApplication {
+     Q_OBJECT
+diff -ur baloo-4.14.3/src/pim/akonadiplugin/autotests/searchplugintest.cpp baloo-4.14.3-moc/src/pim/akonadiplugin/autotests/searchplugintest.cpp
+--- baloo-4.14.3/src/pim/akonadiplugin/autotests/searchplugintest.cpp	2014-11-06 13:03:28.000000000 +0100
++++ baloo-4.14.3-moc/src/pim/akonadiplugin/autotests/searchplugintest.cpp	2017-04-30 00:24:20.269656046 +0200
+@@ -20,6 +20,7 @@
+  *
+  */
+ 
++#ifndef Q_MOC_RUN
+ #include <QTest>
+ #include <Akonadi/Collection>
+ #include <KABC/Addressee>
+@@ -35,6 +36,7 @@
+ #include <../pim/search/note/notesearchstore.h>
+ #include <akonadi/searchquery.h>
+ #include <akonadi/kmime/messageflags.h>
++#endif
+ 
+ Q_DECLARE_METATYPE(QSet<qint64>)
+ Q_DECLARE_METATYPE(QList<qint64>)
+diff -ur baloo-4.14.3/src/pim/lib/tests/contactcompletiontest.cpp baloo-4.14.3-moc/src/pim/lib/tests/contactcompletiontest.cpp
+--- baloo-4.14.3/src/pim/lib/tests/contactcompletiontest.cpp	2014-11-06 13:03:28.000000000 +0100
++++ baloo-4.14.3-moc/src/pim/lib/tests/contactcompletiontest.cpp	2017-04-30 00:23:43.498711650 +0200
+@@ -20,6 +20,7 @@
+  *
+  */
+ 
++#ifndef Q_MOC_RUN
+ #include "../contactcompleter.h"
+ 
+ #include <iostream>
+@@ -31,6 +32,7 @@
+ #include <Akonadi/ItemFetchScope>
+ 
+ #include <KMime/Message>
++#endif
+ 
+ using namespace Baloo::PIM;
+ 
+diff -ur baloo-4.14.3/src/pim/lib/tests/contactsearchtest.cpp baloo-4.14.3-moc/src/pim/lib/tests/contactsearchtest.cpp
+--- baloo-4.14.3/src/pim/lib/tests/contactsearchtest.cpp	2014-11-06 13:03:28.000000000 +0100
++++ baloo-4.14.3-moc/src/pim/lib/tests/contactsearchtest.cpp	2017-04-30 00:23:27.124957805 +0200
+@@ -20,6 +20,7 @@
+  *
+  */
+ 
++#ifndef Q_MOC_RUN
+ #include "contactquery.h"
+ #include "../resultiterator.h"
+ 
+@@ -28,6 +29,7 @@
+ #include <KDebug>
+ 
+ #include <Akonadi/Contact/ContactSearchJob>
++#endif
+ 
+ using namespace Baloo::PIM;
+ 
+diff -ur baloo-4.14.3/src/pim/lib/tests/emailquerytest.cpp baloo-4.14.3-moc/src/pim/lib/tests/emailquerytest.cpp
+--- baloo-4.14.3/src/pim/lib/tests/emailquerytest.cpp	2014-11-06 13:03:28.000000000 +0100
++++ baloo-4.14.3-moc/src/pim/lib/tests/emailquerytest.cpp	2017-04-30 00:23:01.404297273 +0200
+@@ -20,6 +20,7 @@
+  *
+  */
+ 
++#ifndef Q_MOC_RUN
+ #include "../resultiterator.h"
+ #include "../emailquery.h"
+ 
+@@ -31,6 +32,7 @@
+ #include <Akonadi/ItemFetchScope>
+ 
+ #include <KMime/Message>
++#endif
+ 
+ using namespace Baloo::PIM;
+ 
