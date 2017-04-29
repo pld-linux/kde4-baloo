@@ -19,6 +19,7 @@ BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	kde4-kfilemetadata-devel >= %{version}
 BuildRequires:	pkgconfig
+BuildRequires:	qjson-devel
 BuildRequires:	xapian-core-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
