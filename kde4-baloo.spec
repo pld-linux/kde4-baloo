@@ -6,7 +6,7 @@
 Summary:	A framework for searching and managing metadata
 Name:		kde4-baloo
 Version:	4.14.3
-Release:	6
+Release:	7
 License:	LGPLv2 or LGPLv3
 Group:		X11/Applications
 URL:		http://www.kde.org/
@@ -21,15 +21,23 @@ BuildRequires:	kde4-kfilemetadata-devel >= %{version}
 BuildRequires:	pkgconfig
 BuildRequires:	qjson-devel
 BuildRequires:	xapian-core-devel
+Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A framework for searching and managing metadata.
 
+%package libs
+Summary:	Libraries for %{name}
+Group:		X11/Libraries
+
+%description libs
+Baloo libraries.
+
 %package devel
 Summary:	Developer files for %{name}
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-libs = %{version}-%{release}
 Requires:	kde4-kfilemetadata-devel >= %{version}
 
 %description devel
@@ -59,8 +67,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post libs -p /sbin/ldconfig
+%postun libs -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
@@ -71,16 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/balooctl
 %attr(755,root,root) %{_bindir}/baloosearch
 %attr(755,root,root) %{_bindir}/balooshow
-%attr(755,root,root) %{_libdir}/libbaloocore.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libbaloocore.so.?
-%attr(755,root,root) %{_libdir}/libbaloofiles.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libbaloofiles.so.?
-%attr(755,root,root) %{_libdir}/libbaloopim.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libbaloopim.so.?
-%attr(755,root,root) %{_libdir}/libbalooqueryparser.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libbalooqueryparser.so.?
-%attr(755,root,root) %{_libdir}/libbalooxapian.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libbalooxapian.so.?
 %attr(755,root,root) %{_libdir}/kde4/akonadi/akonadi_baloo_searchplugin.so
 %attr(755,root,root) %{_libdir}/kde4/baloo_*.so
 %attr(755,root,root) %{_libdir}/kde4/kcm_baloofile.so
@@ -104,6 +102,19 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/baloosearch.protocol
 %{_datadir}/polkit-1/actions/org.kde.baloo.filewatch.policy
 /etc/dbus-1/system.d/org.kde.baloo.filewatch.conf
+
+%files libs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libbaloocore.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libbaloocore.so.?
+%attr(755,root,root) %{_libdir}/libbaloofiles.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libbaloofiles.so.?
+%attr(755,root,root) %{_libdir}/libbaloopim.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libbaloopim.so.?
+%attr(755,root,root) %{_libdir}/libbalooqueryparser.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libbalooqueryparser.so.?
+%attr(755,root,root) %{_libdir}/libbalooxapian.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libbalooxapian.so.?
 
 %files devel
 %defattr(644,root,root,755)
