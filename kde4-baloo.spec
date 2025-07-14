@@ -45,7 +45,7 @@ Baloo development files and libraries.
 
 %prep
 %setup -q -n %{orgname}-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 install -d build
